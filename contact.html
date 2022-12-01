@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        
+        <header class="about__header">
+            <div class="logo">
+                <a href="Index.html"><img src="/Bilder/ReshineLogga.png" alt="bild på loggan"></a>
+            </div>
+            <nav>
+                <a href="Index.html">home</a>
+                <a href="About.html">about</a>
+                <a href="#">products</a>
+                <a href="contact.html">contact</a>
+            </nav>
+        </header>
+        <main class="contact__main">
+            <div class="contact__container">
+                <section class="formbox">
+                    <form action="contact" class="contact__form">
+                        <input type="text" name="name" id="form__name" placeholder="Fullname">
+                        <input type="email" name="email" id="form__email" placeholder="Email">
+                        <label for="topic"> Topic</label>
+                        <select name="topic" id="form__topic">
+                            <option value="topic" selected disabled hidden>Choose topic</option>
+                            <option value="question">Question</option>
+                            <option value="product">Product</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="any">Any</option>
+                        </select>
+                        <textarea name="message" id="form__message" cols="30" rows="10"></textarea>
+                        <input type="submit" value="submit" class="btn">
+                    </form>
+                </section>
+                <section class="contact__info">
+                    <h2>Contact us</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis possimus magni asperiores voluptates deleniti assumenda. Debitis aliquid animi pariatur quis aperiam sed reprehenderit explicabo molestiae? Molestiae est recusandae sunt laborum.</p>
+                </section>
+            </div>
+            </main>
+        <footer></footer>
+    </div>
+    </body>
+    </html>
