@@ -9,7 +9,8 @@ $header-color: darkslategrey;
 }
 
 .wrapper {
-    min-width: 100vw;
+    margin: auto;
+    width:min(100vw,1440px);
     display: flex;
     flex-direction: column;
 }
@@ -58,24 +59,28 @@ header {
             }
         }      
     }
+    .index__header {
+        margin-bottom: 5rem;
+    }
     
 main {
         height:25rem;
         display: flex;
         align-items: center;
-        
+        width: 100%;
         .info_text{
-            margin-left:9rem;
-            width: auto;
+            margin-left:5rem;
+            width: fit-content;
             h1{
                 font-size: 4.5rem;
-                position: relative;
                 color: black;
+                z-index: 1;
             }
             a{
                 position: relative;
                 text-decoration: none;
                 color: black;
+                z-index: 1;
                 &::after {
                     content:'';
                     width:100%;
@@ -93,17 +98,8 @@ main {
                 }
             }
         }
-    .index__img {
-        object-fit: cover;
-        object-position: 50% 0%;
-        min-width: 1440px;
-        height: 900px;
-        top:-100px;
-        right: 0;
-        z-index: -1;
-        position: absolute;
-    }
 }
+
 aside {
     display: flex;
     flex-direction: column;
@@ -216,6 +212,15 @@ aside {
 footer {
     height:10rem;
     background: rgb(196, 196, 196);
+}
+.index__main {
+    background-image: url(/Bilder/vitoandwilly-dx0Df9VJYfE-unsplash.jpg);
+    background-position: right top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-x: visible;
+    align-items: flex-start;
+    flex-direction: column;
 }
 .about__header {
     height: 6rem;

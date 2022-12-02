@@ -6,7 +6,8 @@
 }
 
 .wrapper {
-  min-width: 100vw;
+  margin: auto;
+  width: min(100vw, 1440px);
   display: flex;
   flex-direction: column;
 }
@@ -57,24 +58,32 @@ header nav a:hover::after {
   transform-origin: center;
 }
 
+.index__header {
+  margin-bottom: 5rem;
+}
+
 main {
   height: 25rem;
   display: flex;
   align-items: center;
+  width: 100%;
 }
 main .info_text {
-  margin-left: 9rem;
-  width: auto;
+  margin-left: 5rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 main .info_text h1 {
   font-size: 4.5rem;
-  position: relative;
   color: black;
+  z-index: 1;
 }
 main .info_text a {
   position: relative;
   text-decoration: none;
   color: black;
+  z-index: 1;
 }
 main .info_text a::after {
   content: "";
@@ -90,18 +99,6 @@ main .info_text a::after {
 }
 main .info_text a:hover::after {
   transform: scale(1.5);
-}
-main .index__img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: 50% 0%;
-     object-position: 50% 0%;
-  min-width: 1440px;
-  height: 900px;
-  top: -100px;
-  right: 0;
-  z-index: -1;
-  position: absolute;
 }
 
 aside {
@@ -208,6 +205,16 @@ aside .card .card__info .price button {
 footer {
   height: 10rem;
   background: rgb(196, 196, 196);
+}
+
+.index__main {
+  background-image: url(/Bilder/vitoandwilly-dx0Df9VJYfE-unsplash.jpg);
+  background-position: right top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow-x: visible;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 .about__header {
