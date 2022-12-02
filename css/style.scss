@@ -1,5 +1,5 @@
 $font: 'Lato', sans-serif;
-$header-color: darkslategrey;
+$header-color: black;
 
 * {
     padding: 0;
@@ -10,32 +10,36 @@ $header-color: darkslategrey;
 
 .wrapper {
     margin: auto;
-    width:min(100vw,1440px);
+    max-width: 1440px;
     display: flex;
     flex-direction: column;
+    container-type: inline-size;
 }
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height:5rem;
+    height:6rem;
     width: 100%;
-    img {
+    margin-bottom: 1rem;
+    .logo{
         width: 200px;
-        height: auto;
         margin-left: 2rem;
+        img {
+            width: 12.5rem;
+            height: auto;
+        }
     }
-        nav {
+        .nav {
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            margin-right: 5.5rem;
             a {
                 text-transform: uppercase;
-                margin-right: 3rem;
+                margin-inline: 3rem;
                 font-size: 1.5rem;
                 text-decoration: none;
-                color:darkslategray;
+                color:$header-color;
                 position: relative;
                 &:hover {
                     color:sandybrown;
@@ -59,9 +63,6 @@ header {
             }
         }      
     }
-    .index__header {
-        margin-bottom: 5rem;
-    }
     
 main {
         height:25rem;
@@ -72,7 +73,7 @@ main {
             margin-left:5rem;
             width: fit-content;
             h1{
-                font-size: 4.5rem;
+                font-size: 7vw;
                 color: black;
                 z-index: 1;
             }
@@ -112,15 +113,16 @@ aside {
         text-align: center;
         line-height: 4;
         position: relative;
-
-    h2 {
+        
+        h2 {
+        font-weight: 300;
         &::before,
         &::after {
             content:'';
             display: inline-block;
             position: relative;
             margin: .3rem 1rem;
-            min-width: 40%;
+            width: 20%;
             height:.1rem;
             border-top: .1rem solid;
         }
@@ -128,20 +130,18 @@ aside {
     }
     
     .cardbox {
-        margin:auto;
-        display: grid;
-        grid-gap:1rem;
-        grid-auto-flow: row dense;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
     }
     .card {
         box-sizing: border-box;
         display: flex;
-        border: .1rem solid;
+        border: .01rem solid;
         width: 25rem;
         height: 15rem;
         border-radius: 10px;
+        margin: 1rem;
         .card__img {
             width: 15rem;
             height: auto;
@@ -215,7 +215,7 @@ footer {
 }
 .index__main {
     background-image: url(/Bilder/vitoandwilly-dx0Df9VJYfE-unsplash.jpg);
-    background-position: right top;
+    background-position: 76% 100%;
     background-size: cover;
     background-repeat: no-repeat;
     overflow-x: visible;
@@ -228,13 +228,14 @@ footer {
 }
 .container {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     section {
         box-sizing: border-box;
         width: 40%;
         height: auto;
     }
+
     .history__header {
         line-height: 2;
         color:$header-color;
@@ -246,18 +247,41 @@ footer {
     color:$header-color;
 }
 .portrait__container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     grid-gap:2rem;
-    grid-template-rows: 1fr 1fr;
     margin-inline: auto;
     .portrait__card{
         height: 15rem;
         width: 12rem;
+        position: relative;
+    }
+    .portrait__card::after {
+        content: '';
+        width: 104.3%;
+        height: 20%;
+        background: rgba(#000, $alpha: 80%);
+        position: absolute;
+        top: 80%;
+        left: 0;
+    }
+    figcaption {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 3%;
+        left: 40%;
+        z-index: 1;
+        h4,h5 {
+            color: white;
+        }
     }
 }
 .contact__main {
-    height:50rem;
+    height:80vh;
     width: 80%;
     margin:auto;
 }
@@ -275,18 +299,76 @@ footer {
 .contact__form {
     display:flex;
     flex-direction: column;
-    input,label,textarea {
+    position: relative;
+    input, .select_label, textarea {
         margin-top: 1rem;
-        padding: .8rem;
+        padding:.8rem;
+        overflow: visible;
     }
-    &::placeholder:focus {
-        content: '';
+    .input_text:focus {
+        border: .1rem solid skyblue;
+    }
+    .name_label {
         position: absolute;
-        top: 0;
-        left: .3rem;
-        transform: translateY(1);
+        top: 7.5%;
+        left: 4%;
+        background: white;
+    }
+    .email_label {
+        position: absolute;
+        top: 22%;
+        left: 4%;
+        background-color: white;
+    }
+    span {
+        margin-top:1rem;
+    }
+    :is(.input_text:focus) + label {
+        transform: translateY(-25px);
+        transition: .75s;
+        color:green;
     }
 }
 .contact__info {
-    margin-left: 10rem;
+    margin-left: 5vw;
+    width: 15rem;
+}
+
+@container (width < 980px) {
+    header {
+        flex-direction:column;
+        justify-content:space-evenly;
+        .logo{
+            margin-left:0;
+        }
+    }
+    header .nav a {
+        font-size:1rem;
+        margin-inline: 1rem;
+    }
+    .contact__container {
+        flex-direction:column-reverse;
+    }
+    .contact__info {
+        width:80vw;
+    }
+    .about__header {
+        position:fixed;
+        background:white;
+    }
+    .about__main {
+        margin-top:7rem;
+        height:auto;
+    }
+    .container {
+        margin:1rem 0;
+        flex-direction:column;
+        width:100vw;
+        section {
+            width:90vw;
+            .about__img {
+                width:90vw;
+            }
+        }
+    }
 }

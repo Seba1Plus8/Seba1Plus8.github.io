@@ -2,46 +2,50 @@
   padding: 0;
   margin: 0;
   font-family: "Lato", sans-serif;
-  color: darkslategrey;
+  color: black;
 }
 
 .wrapper {
   margin: auto;
-  width: min(100vw, 1440px);
+  max-width: 1440px;
   display: flex;
   flex-direction: column;
+  container-type: inline-size;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 5rem;
+  height: 6rem;
   width: 100%;
+  margin-bottom: 1rem;
 }
-header img {
+header .logo {
   width: 200px;
-  height: auto;
   margin-left: 2rem;
 }
-header nav {
+header .logo img {
+  width: 12.5rem;
+  height: auto;
+}
+header .nav {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  margin-right: 5.5rem;
 }
-header nav a {
+header .nav a {
   text-transform: uppercase;
-  margin-right: 3rem;
+  margin-inline: 3rem;
   font-size: 1.5rem;
   text-decoration: none;
-  color: darkslategray;
+  color: black;
   position: relative;
 }
-header nav a:hover {
+header .nav a:hover {
   color: sandybrown;
 }
-header nav a::after {
+header .nav a::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -53,13 +57,9 @@ header nav a::after {
   transition: transform 0.5s;
   transform: scaleX(0);
 }
-header nav a:hover::after {
+header .nav a:hover::after {
   transform: scaleX(1);
   transform-origin: center;
-}
-
-.index__header {
-  margin-bottom: 5rem;
 }
 
 main {
@@ -75,7 +75,7 @@ main .info_text {
   width: fit-content;
 }
 main .info_text h1 {
-  font-size: 4.5rem;
+  font-size: 7vw;
   color: black;
   z-index: 1;
 }
@@ -115,30 +115,31 @@ aside .section_header {
   line-height: 4;
   position: relative;
 }
+aside .section_header h2 {
+  font-weight: 300;
+}
 aside .section_header h2::before, aside .section_header h2::after {
   content: "";
   display: inline-block;
   position: relative;
   margin: 0.3rem 1rem;
-  min-width: 40%;
+  width: 20%;
   height: 0.1rem;
   border-top: 0.1rem solid;
 }
 aside .cardbox {
-  margin: auto;
-  display: grid;
-  grid-gap: 1rem;
-  grid-auto-flow: row dense;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 aside .card {
   box-sizing: border-box;
   display: flex;
-  border: 0.1rem solid;
+  border: 0.01rem solid;
   width: 25rem;
   height: 15rem;
   border-radius: 10px;
+  margin: 1rem;
 }
 aside .card .card__img {
   width: 15rem;
@@ -209,7 +210,7 @@ footer {
 
 .index__main {
   background-image: url(/Bilder/vitoandwilly-dx0Df9VJYfE-unsplash.jpg);
-  background-position: right top;
+  background-position: 76% 100%;
   background-size: cover;
   background-repeat: no-repeat;
   overflow-x: visible;
@@ -224,7 +225,7 @@ footer {
 
 .container {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 .container section {
@@ -234,29 +235,52 @@ footer {
 }
 .container .history__header {
   line-height: 2;
-  color: darkslategrey;
+  color: black;
 }
 
 .aside__header {
   text-align: center;
   padding-top: 2rem;
-  color: darkslategrey;
+  color: black;
 }
 
 .portrait__container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   grid-gap: 2rem;
-  grid-template-rows: 1fr 1fr;
   margin-inline: auto;
 }
 .portrait__container .portrait__card {
   height: 15rem;
   width: 12rem;
+  position: relative;
+}
+.portrait__container .portrait__card::after {
+  content: "";
+  width: 104.3%;
+  height: 20%;
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 80%;
+  left: 0;
+}
+.portrait__container figcaption {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 3%;
+  left: 40%;
+  z-index: 1;
+}
+.portrait__container figcaption h4, .portrait__container figcaption h5 {
+  color: white;
 }
 
 .contact__main {
-  height: 50rem;
+  height: 80vh;
   width: 80%;
   margin: auto;
 }
@@ -276,33 +300,77 @@ footer {
 .contact__form {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
-.contact__form input, .contact__form label, .contact__form textarea {
+.contact__form input, .contact__form .select_label, .contact__form textarea {
   margin-top: 1rem;
   padding: 0.8rem;
+  overflow: visible;
 }
-.contact__form::-moz-placeholder:focus {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0.3rem;
-  transform: translateY(1);
+.contact__form .input_text:focus {
+  border: 0.1rem solid skyblue;
 }
-.contact__form:-ms-input-placeholder:focus {
-  content: "";
+.contact__form .name_label {
   position: absolute;
-  top: 0;
-  left: 0.3rem;
-  transform: translateY(1);
+  top: 7.5%;
+  left: 4%;
+  background: white;
 }
-.contact__form::placeholder:focus {
-  content: "";
+.contact__form .email_label {
   position: absolute;
-  top: 0;
-  left: 0.3rem;
-  transform: translateY(1);
+  top: 22%;
+  left: 4%;
+  background-color: white;
+}
+.contact__form span {
+  margin-top: 1rem;
+}
+.contact__form :is(.input_text:focus) + label {
+  transform: translateY(-25px);
+  transition: 0.75s;
+  color: green;
 }
 
 .contact__info {
-  margin-left: 10rem;
+  margin-left: 5vw;
+  width: 15rem;
+}
+
+@container (width < 980px) {
+  header {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  header .logo {
+    margin-left: 0;
+  }
+  header .nav a {
+    font-size: 1rem;
+    margin-inline: 1rem;
+  }
+  .contact__container {
+    flex-direction: column-reverse;
+  }
+  .contact__info {
+    width: 80vw;
+  }
+  .about__header {
+    position: fixed;
+    background: white;
+  }
+  .about__main {
+    margin-top: 7rem;
+    height: auto;
+  }
+  .container {
+    margin: 1rem 0;
+    flex-direction: column;
+    width: 100vw;
+  }
+  .container section {
+    width: 90vw;
+  }
+  .container section .about__img {
+    width: 90vw;
+  }
 }/*# sourceMappingURL=style.css.map */

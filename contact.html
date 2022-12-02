@@ -17,7 +17,7 @@
             <div class="logo">
                 <a href="Index.html"><img src="/Bilder/ReshineLogga.png" alt="bild på loggan"></a>
             </div>
-            <nav>
+            <nav class="nav">
                 <a href="Index.html">home</a>
                 <a href="About.html">about</a>
                 <a href="#">products</a>
@@ -28,16 +28,21 @@
             <div class="contact__container">
                 <section class="formbox">
                     <form action="contact" class="contact__form">
-                        <input type="text" name="name" id="form__name" placeholder="Fullname">
-                        <input type="email" name="email" id="form__email" placeholder="Email">
-                        <label for="topic"> Topic</label>
-                        <select name="topic" id="form__topic">
-                            <option value="topic" selected disabled hidden>Choose topic</option>
-                            <option value="question">Question</option>
-                            <option value="product">Product</option>
-                            <option value="feedback">Feedback</option>
-                            <option value="any">Any</option>
-                        </select>
+                        <input type="text" name="name" id="form__name" class="input_text move">
+                        <label for="name" class="name_label">Fullname</label>
+                        <input type="email" name="email" id="form__email" class="input_text move">
+                        <label for="email" class="email_label">Email</label>
+                        <span>
+
+                            <label for="topic" class="select_label"> Topic</label>
+                            <select name="topic" id="form__topic">
+                                <option value="topic" selected disabled hidden>Choose topic</option>
+                                <option value="question">Question</option>
+                                <option value="product">Product</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="any">Any</option>
+                            </select>
+                        </span>
                         <textarea name="message" id="form__message" cols="30" rows="10"></textarea>
                         <input type="submit" value="submit" class="btn">
                     </form>
