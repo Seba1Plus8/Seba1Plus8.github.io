@@ -350,6 +350,7 @@ footer {
   }
   .contact__container {
     flex-direction: column-reverse;
+    margin-top: 7rem;
   }
   .contact__info {
     width: 80vw;
