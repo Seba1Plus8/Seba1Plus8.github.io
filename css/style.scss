@@ -203,11 +203,9 @@ aside {
                     padding: .3rem 3rem;
                 }
             }
-            
-
         }
     }
-
+    
 }
 footer {
     height:10rem;
@@ -235,7 +233,7 @@ footer {
         width: 40%;
         height: auto;
     }
-
+    
     .history__header {
         line-height: 2;
         color:$header-color;
@@ -333,6 +331,30 @@ footer {
     margin-left: 5vw;
     width: 15rem;
 }
+.productbox {
+    display: flex;
+    width: 100%;
+    height: auto;
+    margin-top: 10rem;
+    flex-wrap: wrap;
+}
+.product {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: auto;
+}
+        .product__img {
+            background-image:  url(/Bilder/card_img_1.jpg);
+            width: 95%;
+            height: 20rem;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+    }
+    .product__info {
+        margin: 1rem auto;
+    }
 
 @container (width < 980px) {
     header {

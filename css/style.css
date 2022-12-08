@@ -336,6 +336,34 @@ footer {
   width: 15rem;
 }
 
+.productbox {
+  display: flex;
+  width: 100%;
+  height: auto;
+  margin-top: 10rem;
+  flex-wrap: wrap;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: auto;
+}
+
+.product__img {
+  background-image: url(/Bilder/card_img_1.jpg);
+  width: 95%;
+  height: 20rem;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.product__info {
+  margin: 1rem auto;
+}
+
 @container (width < 980px) {
   header {
     flex-direction: column;
