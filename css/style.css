@@ -254,6 +254,7 @@ footer {
 .portrait__container .portrait__card {
   height: 15rem;
   width: 12rem;
+  margin: 1rem;
   position: relative;
 }
 .portrait__container .portrait__card::after {
@@ -270,19 +271,19 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  bottom: 3%;
-  left: 40%;
+  position: relative;
+  bottom: 20%;
   z-index: 1;
+  margin-bottom: 1rem;
 }
 .portrait__container figcaption h4, .portrait__container figcaption h5 {
   color: white;
 }
 
 .contact__main {
-  height: 80vh;
+  height: auto;
   width: 80%;
-  margin: auto;
+  margin: 3rem auto;
 }
 
 .contact__container {
@@ -290,7 +291,7 @@ footer {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 20rem;
+  height: auto;
 }
 
 .formbox {
@@ -347,7 +348,7 @@ footer {
 .product {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 25%;
   height: auto;
 }
 
@@ -401,5 +402,8 @@ footer {
   }
   .container section .about__img {
     width: 90vw;
+  }
+  .product {
+    width: 50%;
   }
 }/*# sourceMappingURL=style.css.map */
