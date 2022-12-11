@@ -210,6 +210,28 @@ aside {
 footer {
     height:10rem;
     background: rgb(196, 196, 196);
+    .footer__wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto;
+        width:80%;
+        height: 80%;
+        .footer__logo {
+            width: 15vw;
+            img {
+                width: 15vw;
+                height: auto;
+            }
+        }
+        .footer__nav ul li {
+            list-style-type: none;
+
+        }
+    }
+    p {
+        text-align: center;
+    }
 }
 .index__main {
     background-image: url(/Bilder/vitoandwilly-dx0Df9VJYfE-unsplash.jpg);
@@ -325,7 +347,7 @@ footer {
     :is(.input_text:focus) + label {
         transform: translateY(-25px);
         transition: .75s;
-        color:green;
+        color:blue;
     }
 }
 .contact__info {
