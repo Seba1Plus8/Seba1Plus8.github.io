@@ -34,6 +34,9 @@ header .nav {
   justify-content: center;
   align-items: center;
 }
+header .nav .active {
+  color: sandybrown;
+}
 header .nav a {
   text-transform: uppercase;
   margin-inline: 3rem;
@@ -54,12 +57,15 @@ header .nav a::after {
   height: 0.3rem;
   background: sandybrown;
   transform-origin: center;
-  transition: transform 0.5s;
+  transition: transform 0.25s;
   transform: scaleX(0);
 }
 header .nav a:hover::after {
   transform: scaleX(1);
   transform-origin: center;
+}
+header .nav .active::after {
+  transform: scaleX(1);
 }
 
 main {
