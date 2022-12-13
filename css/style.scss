@@ -13,18 +13,17 @@ $header-color: black;
     max-width: 1440px;
     display: flex;
     flex-direction: column;
-    container-type: inline-size;
 }
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
     height:6rem;
     width: 100%;
     margin-bottom: 1rem;
     .logo{
         width: 200px;
-        margin-left: 2rem;
         img {
             width: 12.5rem;
             height: auto;
@@ -39,8 +38,8 @@ header {
             align-items: center;
             a {
                 text-transform: uppercase;
-                margin-inline: 3rem;
-                font-size: 1.5rem;
+                margin-inline: 1rem;
+                font-size: 1rem;
                 text-decoration: none;
                 color:$header-color;
                 position: relative;
@@ -233,7 +232,7 @@ footer {
         }
         .footer__nav ul li {
             list-style-type: none;
-
+            margin-top: .5rem;
         }
     }
     p {
@@ -252,15 +251,28 @@ footer {
 .about__header {
     height: 6rem;
     width: 100%;
+    position: fixed;
+    z-index: 2;
+    background: white;
+}
+.about__main {
+    margin-top:7rem;
+    height:auto;
 }
 .container {
     display: flex;
+    margin:1rem 0;
+    flex-direction: column;
+    width: 100vw;
     justify-content: space-evenly;
     align-items: center;
     section {
         box-sizing: border-box;
-        width: 40%;
+        width: 90vw;
         height: auto;
+        .about__img{
+            width:90vw;
+        }
     }
     
     .history__header {
@@ -315,8 +327,10 @@ footer {
 }
 .contact__container {
     display: flex;
+    flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
+    margin-top: 7rem;
     width:100%;
     height: auto;
 }
@@ -359,7 +373,7 @@ footer {
 }
 .contact__info {
     margin-left: 5vw;
-    width: 15rem;
+    width: 80vw;
 }
 .productbox {
     display: flex;
@@ -371,7 +385,7 @@ footer {
 .product {
     display: flex;
     flex-direction: column;
-    width: 25%;
+    width: 50%;
     height: auto;
 }
         .product__img {
@@ -386,46 +400,42 @@ footer {
         margin: 1rem auto;
     }
 
-@container (width < 980px) {
+@media (min-width: 980px) {
     header {
-        flex-direction:column;
-        justify-content:space-evenly;
+        flex-direction:row;
+        justify-content:space-between;
         .logo{
-            margin-left:0;
+            margin-left:2rem;
         }
     }
     header .nav a {
-        font-size:1rem;
-        margin-inline: 1rem;
+        font-size:1.5rem;
+        margin-inline: 3rem;
     }
     .contact__container {
-        flex-direction:column-reverse;
-        margin-top: 7rem;
+        flex-direction:row;
     }
     .contact__info {
-        width:80vw;
+        width:15rem;
     }
     .about__header {
-        position:fixed;
-        background:white;
+        position:relative;
     }
     .about__main {
-        margin-top:7rem;
         height:auto;
     }
     .container {
-        margin:1rem 0;
-        flex-direction:column;
-        width:100vw;
+        margin:0;
+        flex-direction:row;
         section {
-            width:90vw;
-            .about__img {
-                width:90vw;
+            width:40%;
+            .about__img{
+                width:100%;
             }
         }
-    }
+        }
     .product {
-        width: 50%;
+        width: 25%;
         
     }
 }
